@@ -20,6 +20,6 @@ definitions:
 
 pipelines:
   custom:
-    release-to-preview-server:
+    start-demo-job:
       - step: *demo-job
 
