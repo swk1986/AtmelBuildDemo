@@ -1,13 +1,3 @@
-#  Template publish .NET Core package to nuget.org
-
-#  This template allows you to publish your .NET Core package to nuget.org.
-#  The workflow allows running tests, code linting and security scans on feature branches (as well as master).
-#  The .NET Core package will be validated and published after the code is merged to master.
-
-# Prerequisites: $NUGET_SECRET_API_KEY setup as deployment variables.
-
-# To run your pipeline on a Windows machine, create a self-hosted Windows runner.
-# For instructions on setting up a Windows runner, see https://support.atlassian.com/bitbucket-cloud/docs/set-up-runners-for-windows/
 
 image: ubuntu:22.04
 
