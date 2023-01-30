@@ -7,7 +7,7 @@ definitions:
         script:
           - dpkg-divert --local --rename --add /sbin/initctl
           - ln -sf /bin/true /sbin/initctl
-          - ENV DEBIAN_FRONTEND noninteractive
+          - DEBIAN_FRONTEND=noninteractive
           - dpkg --add-architecture i386 
           - apt-get update 
           - apt-get -y install gcc-avr binutils-avr avr-libc gdb-avr avrdude  make git  sudo curl tree nano lrzsz
@@ -15,5 +15,5 @@ definitions:
           - make hex
 pipelines:
   custom:
-    start-demo-job:
+    release-to-preview-server:
       - step: *demo-job
