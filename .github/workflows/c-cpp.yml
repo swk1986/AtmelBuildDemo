@@ -1,0 +1,29 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: dpkg-divert
+      run: dpkg-divert --local --rename --add /sbin/initctl
+    - name: ln
+      run: ln -sf /bin/true /sbin/initctl
+    - name: set env
+      run: DEBIAN_FRONTEND=noninteractive
+    - name: set dpkg architecture
+      run: dpkg --add-architecture i386  
+    - name: install build tools
+      run: apt-get update && apt-get -y install gcc-avr binutils-avr avr-libc gdb-avr avrdude  make git  sudo curl tree nano lrzsz
+    - name: move to project dir 
+      run: cd ./src/Doku_Test
+    - name: make
+      run: make hex
