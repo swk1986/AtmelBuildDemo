@@ -18,10 +18,10 @@ jobs:
         sudo dpkg-divert --local --rename --add /sbin/initctl
         sudo ln -sf /bin/true /sbin/initctl
         DEBIAN_FRONTEND=noninteractive
-        sudo dpkg --add-architecture i386  
         
     - name: install build tools
       run: |
+        sudo dpkg --add-architecture i386  
         sudo apt-get update 
         sudo apt-get -y install gcc-avr binutils-avr avr-libc gdb-avr avrdude  make git  sudo curl tree nano lrzsz
         
