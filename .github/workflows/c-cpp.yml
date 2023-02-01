@@ -35,4 +35,4 @@ jobs:
       with:
         name: all skeleton-files
         path: |
-          /skeleton.*
+          ./src/Doku_Test/skeleton.*
