@@ -18,7 +18,7 @@ jobs:
         sudo dpkg-divert --local --rename --add /sbin/initctl
         sudo ln -sf /bin/true /sbin/initctl
         DEBIAN_FRONTEND=noninteractive
-        dpkg --add-architecture i386  
+        sudo dpkg --add-architecture i386  
         
     - name: install build tools
       run: |
