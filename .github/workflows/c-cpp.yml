@@ -25,7 +25,14 @@ jobs:
         sudo apt-get update 
         sudo apt-get -y install gcc-avr binutils-avr avr-libc gdb-avr avrdude  make git  sudo curl tree nano lrzsz
         
-    - name: move to project dir 
+    - name: build project using make
       run: |
         cd ./src/Doku_Test
         make hex
+        
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: all skeleton-files
+        path: |
+          skeleton.*
