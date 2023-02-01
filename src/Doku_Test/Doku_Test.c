@@ -11,7 +11,7 @@
 
 uint8_t		HW_Init(void)
 /** *************************************
-* \brief		Initialization µC-settings
+* \brief		Initialization ï¿½C-settings
 * **************************************
 * \author		wj
 * **************************************
@@ -86,15 +86,15 @@ uint8_t		HW_Init(void)
 int main(void)
 {
 	
-	HW_Init();
+    HW_Init();
 	
-	
+    //<snippet_ImportantLogic>
     while(1)
     {
-        //TODO:: Please write your application code 
-		
+		//TODO:: Please write your application code 
 		PORTB = PORTB ^ 0x40;
     }
+    //</snippet_ImportantLogic>
 }
 
 
